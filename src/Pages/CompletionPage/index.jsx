@@ -5,7 +5,7 @@ function CompletionPage() {
 
 const CompletionPageWrapper = styled.div`
     text-align: center;
-    background-color: aqua;
+    // background-color: aqua;
     padding: 4em;
 `;
 CompletionPageWrapper.Title = styled.h1`

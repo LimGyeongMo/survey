@@ -43,7 +43,7 @@ function SurveyPage() {
     console.log(answers);
     return (
         <div>
-            <ProgressIndicator />
+            {/* <ProgressIndicator /> */}
             <QuestionBox
                 question={questions[step]}
                 questionsLength={questions.length}
