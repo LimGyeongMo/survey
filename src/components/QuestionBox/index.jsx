@@ -2,9 +2,18 @@ import Desc from "../Desc";
 import Title from "../Title";
 import Body from "../Body";
 import ActionButtons from "../ActionButtons";
-function QuestionBox({ question, questionsLength, step, answer, setAnswer }) {
+import styled from "styled-components";
+
+import { useCurrentQuestion } from "../../hooks/useCurrentQuestion";
+import { useCurrentAnswer } from "../../hooks/useCurrentAnswer";
+function QuestionBox({}) {
+    const question = useCurrentQuestion();
+    console.log(question);
+    const [answer, setAnswer] = useCurrentAnswer();
+    console.log(answer, setAnswer);
+
     return (
-        <div>
+        <QuestionBoxWrapper>
             <Title>{question.title}</Title>
             <Desc>{question.desc}</Desc>
             <Body
@@ -13,8 +22,15 @@ function QuestionBox({ question, questionsLength, step, answer, setAnswer }) {
                 setAnswer={setAnswer}
                 options={question.options}
             />
-            <ActionButtons questionsLength={questionsLength} step={step} />
-        </div>
+            <ActionButtons />
+        </QuestionBoxWrapper>
     );
 }
+
+const QuestionBoxWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+`;
 export default QuestionBox;

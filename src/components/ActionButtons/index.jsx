@@ -1,10 +1,17 @@
 import { useNavigate } from "react-router";
 import Button from "../Button";
-function ActionButtons({ questionsLength, step }) {
+import { styled } from "styled-components";
+import { useRecoilValue } from "recoil";
+import { questionsLengthState } from "../../stores/questions/questionsLengthState";
+import { useStep } from "../../hooks/useStep";
+function ActionButtons({}) {
+    const step = useStep();
+    const questionsLength = useRecoilValue(questionsLengthState);
+
     const isLast = questionsLength - 1 === step;
     const navigate = useNavigate();
     return (
-        <div>
+        <ActionButtonsWrapper>
             {step === 0 || (
                 <Button
                     type="TERTIARY"
@@ -34,7 +41,14 @@ function ActionButtons({ questionsLength, step }) {
                     다음
                 </Button>
             )}
-        </div>
+        </ActionButtonsWrapper>
     );
 }
+
+const ActionButtonsWrapper = styled.div`
+    margin-top: 72px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+`;
 export default ActionButtons;

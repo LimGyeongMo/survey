@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-function Item({ children, onChange }) {
+function Item({ children, onChange, checked }) {
     return (
         <ItemWrapper>
             <label>
-                <input type="checkbox" onChange={onChange} />
+                <input type="checkbox" onChange={onChange} checked={checked} />
                 <span />
                 <div>{children}</div>
             </label>
@@ -15,13 +15,6 @@ function Item({ children, onChange }) {
 function SelectInput({ answer = [], setAnswer, options }) {
     const handleChange = (isChecked, index) => {
         console.log("handleChange", answer, index, isChecked);
-        // if (isChecked) {
-        //     setAnswer((prevAnswer) => [...prevAnswer, index]);
-        // } else {
-        //     setAnswer((prevAnswer) =>
-        //         prevAnswer.filter((item) => item !== index)
-        //     );
-        // }
 
         if (isChecked) {
             setAnswer([...answer, index]);
@@ -36,6 +29,7 @@ function SelectInput({ answer = [], setAnswer, options }) {
                 return (
                     <Item
                         key={index}
+                        checked={answer.includes(index)} // checked 상태 반영
                         onChange={(e) => {
                             handleChange(e.target.checked, index);
                         }}
@@ -57,7 +51,7 @@ const SelectInputWrapper = styled.div`
 const ItemWrapper = styled.div`
     label {
         display: flex;
-        align-items: center; /* 요소들을 수직 중앙 정렬 */
+        align-items: center;s
     }
 
     input[type="checkbox"] {

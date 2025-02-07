@@ -1,11 +1,10 @@
-import "./App.css";
-
 import { Route, Routes } from "react-router";
 import CompletionPage from "./Pages/CompletionPage";
 import SurveyPage from "./Pages/SurveyPage";
 import styled from "styled-components";
 
 function App() {
+    console.log("App 렌더링 suc");
     return (
         <div className="App">
             <AppWrapper>
@@ -40,5 +39,7 @@ const Box = styled.div`
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.07);
     border-radius: 16px;
     padding: 60px;
+    display: flex;
+    box-sizing: border-box;
 `;
 export default App;

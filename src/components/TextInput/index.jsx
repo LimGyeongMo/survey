@@ -17,9 +17,10 @@ const Input = styled.input`
     border: 1px solid #e0e0e0;
     border-sizing: border-box;
     border-radius: 5px;
-
+    width: 100%;
     font-size: 18px;
     line_height: 21px;
     padding: 12px 18px;
+    resize: none;
 `;
 export default TextInput;
