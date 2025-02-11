@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function TextInput({ answer, setAnswer, options }) {
+function TextInput({ answer = "", setAnswer, options }) {
     return (
         <Input
             type="text"
@@ -9,6 +9,7 @@ function TextInput({ answer, setAnswer, options }) {
                 setAnswer(e.target.value);
             }}
             placeholder={options.placeholder}
+            {...(options?.max && { maxLength: options?.max })}
         />
     );
 }
@@ -21,6 +22,5 @@ const Input = styled.input`
     font-size: 18px;
     line_height: 21px;
     padding: 12px 18px;
-    resize: none;
 `;
 export default TextInput;

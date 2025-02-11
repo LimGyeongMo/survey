@@ -15,8 +15,11 @@ function Item({ children, onChange, checked }) {
 function SelectInput({ answer = [], setAnswer, options }) {
     const handleChange = (isChecked, index) => {
         console.log("handleChange", answer, index, isChecked);
-
         if (isChecked) {
+            const max = options?.max ?? 1;
+            if (answer.length >= max) {
+                return;
+            }
             setAnswer([...answer, index]);
         } else {
             setAnswer(answer.filter((i) => i !== index));

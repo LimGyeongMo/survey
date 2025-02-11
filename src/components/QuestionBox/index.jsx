@@ -7,10 +7,12 @@ import styled from "styled-components";
 import { useCurrentQuestion } from "../../hooks/useCurrentQuestion";
 import { useCurrentAnswer } from "../../hooks/useCurrentAnswer";
 function QuestionBox({}) {
-    const question = useCurrentQuestion();
-    console.log(question);
     const [answer, setAnswer] = useCurrentAnswer();
-    console.log(answer, setAnswer);
+    const question = useCurrentQuestion();
+
+    if (!question) {
+        return null;
+    }
 
     return (
         <QuestionBoxWrapper>

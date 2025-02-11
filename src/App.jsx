@@ -10,7 +10,10 @@ function App() {
             <AppWrapper>
                 <Box>
                     <Routes>
-                        <Route path="/done" element={<CompletionPage />} />
+                        <Route
+                            path="/done/:surveyId"
+                            element={<CompletionPage />}
+                        />
                         <Route
                             path="/survey/:surveyId"
                             element={<SurveyPage />}
@@ -41,5 +44,6 @@ const Box = styled.div`
     padding: 60px;
     display: flex;
     box-sizing: border-box;
+    position: relative;
 `;
 export default App;

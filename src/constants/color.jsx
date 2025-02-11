@@ -45,22 +45,22 @@ export const TERTIARY = {
         DEFAULT: {
             BACKGROUND: "#FFFFFF",
             COLOR: "#6524F1",
-            BOARDER: "#6524F1",
+            BORDER: " #6524F1",
         },
         HOVER: {
             BACKGROUND: "#FFFFFF",
             COLOR: "#9982F4",
-            BOARDER: "#9982F4",
+            BORDER: "#9982F4",
         },
         PRESSED: {
             BACKGROUND: "#F0EDFC",
             COLOR: "#4B31B0",
-            BOARDER: "#4B31B0",
+            BORDER: " #4B31B0",
         },
         DISABLED: {
             BACKGROUND: "#F0EDFC",
             COLOR: "#F6F6F6",
-            BOARDER: "#EDEDED",
+            BORDER: " #EDEDED",
         },
     },
 };
